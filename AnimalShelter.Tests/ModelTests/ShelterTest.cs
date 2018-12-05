@@ -7,19 +7,19 @@ using MySql.Data.MySqlClient;
 namespace Animal.Tests
 {
   [TestClass]
-  public class ShelterTest
+  public class ShelterTest : IDisposable
   {
-    //
-    // public void Dispose()
-    // {
-    //   Shelter.ClearAll();
-    // }
+
+    public void Dispose()
+    {
+      Shelter.ClearAll();
+    }
     public ShelterTest()
     {
-      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=animal_database;";
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=AnimalTest;";
     }
     [TestMethod]
-    public void ShelterConstructor_CreatesInstanceOfItem_Shelter()
+    public void ShelterConstructor_CreatesInstanceOfShelter_Shelter()
     {
       Shelter newShelter = new Shelter("test", "test", 10.12, 5);
       Assert.AreEqual(typeof(Shelter), newShelter.GetType());
@@ -44,5 +44,6 @@ namespace Animal.Tests
       Assert.AreEqual(sex, resultSex);
       Assert.AreEqual(date, resultDate);
     }
+
   }
 }

@@ -43,6 +43,6 @@ namespace Animal
     }
     public static class DBConfiguration
     {
-      public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=AnimalShelter;";
+      public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=Animal_database;";
     }
  }
